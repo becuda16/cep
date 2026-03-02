@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CEP - Consulta de Endereço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📮 Busca CEP</h1>
+        <p class="subtitle">Consulte endereços pelo CEP</p>
+
+        <div class="search-box">
+            <input type="text" 
+                   id="cepInput" 
+                   placeholder="Digite o CEP (ex: 01001000)" 
+                   maxlength="9"
+                   pattern="\d{5}-?\d{3}">
+            <button id="searchBtn">Buscar</button>
+        </div>
+
+        <div class="loading" id="loading">
+            🔍 Buscando endereço...
+        </div>
+
+        <div class="result-card" id="resultCard" style="display: none;">
+            <div class="info-row">
+                <span class="info-label">CEP:</span>
+                <span class="info-value cep-highlight" id="cep">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Logradouro:</span>
+                <span class="info-value" id="logradouro">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Bairro:</span>
+                <span class="info-value" id="bairro">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Cidade:</span>
+                <span class="info-value" id="cidade">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Estado:</span>
+                <span class="info-value" id="estado">-</span>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            ⚠️ CEP não encontrado ou formato inválido!
+        </div>
+
+        <div class="examples">
+            <small>Exemplos: </small>
+            <span class="cep-example" onclick="fillExampleCEP('01001000')">01001000</span>
+            <span class="cep-example" onclick="fillExampleCEP('20040002')">20040002</span>
+            <span class="cep-example" onclick="fillExampleCEP('30130010')">30130010</span>
+            <span class="cep-example" onclick="fillExampleCEP('01414001')">01414001</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
